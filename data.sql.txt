@@ -1,0 +1,46 @@
+INSERT INTO Teams VALUES
+('T1','Team Alpha','Rohit Sharma'),
+('T2','Team Beta','Priya Nair'),
+('T3','Team Gamma','Amit Verma'),
+('T4','Team Delta','Neha Reddy'),
+('T5','Team Epsilon','Karan Gupta');
+
+INSERT INTO Workflows VALUES
+('W1','Hate Speech Review'),
+('W2','Nudity Content'),
+('W3','Violence Content'),
+('W4','Spam Detection'),
+('W5','Child Safety');
+
+INSERT INTO Employees VALUES
+('E101','Arjun Mehta','T1','2023-01-10','Active'),
+('E102','Priya Sharma','T1','2023-02-15','Active'),
+('E103','Rohit Verma','T2','2023-03-01','Active'),
+('E104','Neha Reddy','T2','2023-03-10','Active'),
+('E105','Karan Gupta','T3','2023-04-05','Active'),
+('E106','Sneha Iyer','T3','2023-04-12','Active'),
+('E107','Vikas Singh','T4','2023-05-01','Active'),
+('E108','Anjali Das','T4','2023-05-15','Active'),
+('E109','Rahul Jain','T5','2023-06-01','Active'),
+('E110','Pooja Kapoor','T5','2023-06-10','Active');
+
+
+INSERT INTO Attendance VALUES
+('E101','2024-03-01','09:02:00','18:05:00','Present'),
+('E101','2024-03-02','09:10:00','18:00:00','Present'),
+('E102','2024-03-01','09:30:00','18:00:00','Late'),
+('E103','2024-03-01','09:05:00','18:10:00','Present'),
+('E104','2024-03-01','10:00:00','18:30:00','Late'),
+('E105','2024-03-01','09:00:00','18:00:00','Present');
+
+
+
+INSERT INTO Moderation_Performance VALUES
+('E101','W1','2024-03-01',120,10,96.5),
+('E102','W2','2024-03-01',95,8,89.0),
+('E103','W3','2024-03-01',110,12,92.0),
+('E104','W4','2024-03-01',80,15,85.0),
+('E105','W5','2024-03-01',130,9,97.2),
+('E106','W1','2024-03-01',105,11,91.5),
+('E107','W2','2024-03-01',90,7,93.0),
+('E108','W3','2024-03-01',115,10,94.5);

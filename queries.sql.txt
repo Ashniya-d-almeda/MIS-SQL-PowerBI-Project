@@ -1,0 +1,62 @@
+Headcount Report
+
+SELECT status, COUNT(*) AS total_employees
+FROM Employees
+GROUP BY status;
+
+Attendance Report
+
+SELECT Employees.name, Attendance.date, Attendance.status
+FROM Attendance
+JOIN Employees
+ON Attendance.emp_id = Employees.emp_id;
+
+Workflow Productivity
+
+SELECT Workflows.workflow_name, SUM(Moderation_Performance.videos_reviewed) AS total_videos
+FROM Moderation_Performance
+JOIN Workflows
+ON Moderation_Performance.workflow_id = Workflows.workflow_id
+GROUP BY Workflows.workflow_name;
+
+
+Team Performance
+
+SELECT Teams.team_name, SUM(Moderation_Performance.videos_reviewed) AS total_output
+FROM Moderation_Performance
+JOIN Employees
+ON Moderation_Performance.emp_id = Employees.emp_id
+JOIN Teams
+ON Employees.team_id = Teams.team_id
+GROUP BY Teams.team_name;
+
+Low Accuracy
+
+SELECT Employees.name, AVG(Moderation_Performance.accuracy) AS avg_accuracy
+FROM Moderation_Performance
+JOIN Employees
+ON Moderation_Performance.emp_id = Employees.emp_id
+GROUP BY Employees.name
+HAVING avg_accuracy < 90;
+
+
+
+Attendance Percentage
+
+
+SELECT 
+    e.name,
+    COUNT(*) AS total_days,
+    SUM(CASE WHEN a.status='Present' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS attendance_percentage
+FROM Attendance a
+JOIN Employees e ON a.emp_id = e.emp_id
+GROUP BY e.name;
+
+
+Quality Report (Accuracy)
+
+
+SELECT e.name, AVG(m.accuracy) AS avg_accuracy
+FROM Moderation_Performance m
+JOIN Employees e ON m.emp_id = e.emp_id
+GROUP BY e.name;

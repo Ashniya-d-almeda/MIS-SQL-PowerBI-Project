@@ -1,0 +1,49 @@
+CREATE DATABASE MIS_BLR;
+USE MIS_BLR;
+
+-- Teams
+CREATE TABLE Teams (
+    team_id VARCHAR(100) PRIMARY KEY,
+    team_name VARCHAR(100),
+    tl_name VARCHAR(100)
+);
+
+-- Employees
+CREATE TABLE Employees (
+    emp_id VARCHAR(100) PRIMARY KEY,
+    name VARCHAR(100),
+    team_id VARCHAR(100),
+    joining_date DATE,
+    status VARCHAR(100),
+    FOREIGN KEY (team_id) REFERENCES Teams(team_id)
+);
+
+-- Workflows
+CREATE TABLE Workflows (
+    workflow_id VARCHAR(100) PRIMARY KEY,
+    workflow_name VARCHAR(100)
+);
+
+-- Attendance (composite key)
+CREATE TABLE Attendance (
+    emp_id VARCHAR(100),
+    date DATE,
+    login_time TIME,
+    logout_time TIME,
+    status VARCHAR(100),
+    PRIMARY KEY (emp_id, date),
+    FOREIGN KEY (emp_id) REFERENCES Employees(emp_id)
+);
+
+-- Moderation Performance (composite key)
+CREATE TABLE Moderation_Performance (
+    emp_id VARCHAR(100),
+    workflow_id VARCHAR(100),
+    date DATE,
+    videos_reviewed INT,
+    violations_found INT,
+    accuracy DECIMAL(5,2),
+    PRIMARY KEY (emp_id, workflow_id, date),
+    FOREIGN KEY (emp_id) REFERENCES Employees(emp_id),
+    FOREIGN KEY (workflow_id) REFERENCES Workflows(workflow_id)
+);

@@ -1,0 +1,41 @@
+# YouTube Content Moderation MIS Dashboard
+
+## 📌 Overview
+This project simulates a large-scale YouTube content moderation operation with 300+ moderators, 20 teams, and 5 workflows.
+
+## 🎯 Objective
+- Manage employee lifecycle (onboarding to offboarding)
+- Track attendance and shift adherence
+- Monitor workflow-wise productivity
+- Analyze moderator accuracy and quality
+- Generate MIS reports for operations and WFM teams
+
+## 🛠 Tools Used
+- MySQL
+- Power BI
+
+## 📊 Key Features
+- Workflow productivity analysis
+- Team performance tracking
+- Attendance and adherence monitoring
+- Accuracy and quality reporting
+- Top performer identification
+- Low accuracy alerts
+
+## 🧱 Database Structure
+- Teams
+- Employees
+- Workflows
+- Attendance
+- Moderation_Performance
+
+## 📁 Project Files
+- schema.sql → Database creation
+- data.sql → Sample data
+- queries.sql → MIS reports queries
+
+## 🚀 Outcome
+Built a complete MIS reporting system to support decision-making for operations and workforce management teams.
+
+## 💡 Use Case
+This project reflects real-world responsibilities of an MIS Executive in a content moderation environment like YouTube operations.
